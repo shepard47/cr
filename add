@@ -1,0 +1,5 @@
+#!/bin/rc
+
+mkdir -p cr
+echo $* >> cr/files
+cp $* cr/

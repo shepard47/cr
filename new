@@ -1,0 +1,12 @@
+#!/bin/rc
+
+files=`{cat cr/files}
+for(i in $files){
+	diff -e $i cr/$i > cr/$i.e
+	echo wq >> cr/$i.e
+	cp $i cr/$i
+}
+bundle cr/*.e > cr/$1
+rm cr/*.e
+
+

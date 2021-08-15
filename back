@@ -1,0 +1,8 @@
+#!/bin/rc
+
+rc cr/$1
+files=`{cat cr/files}
+for(i in $files){
+	ed - $i < cr/$i.e
+}
+rm -f cr/*.e

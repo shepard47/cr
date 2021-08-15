@@ -1,0 +1,12 @@
+#!/bin/rc
+
+for(i in $*){
+	cat cr/files | sed 's/$i//g' > cr/files
+	rm -f cr/$i
+}
+
+if(cat cr/files | wc -l){
+	rm cr/files
+	echo 'all files were removed'
+}
+
